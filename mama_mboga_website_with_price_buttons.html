@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mama Mboga - Fresh tomatoes, onions, chillies, pilipili hoho and coriander at Machakos Main Market. Order through WhatsApp.">
+<title>Mama Mboga | Fresh Produce</title>
+<style>
+:root{--g:#176b3a;--g2:#0d4b2a;--r:#d93636;--cream:#fffaf0;--ink:#17221b;--muted:#68736c;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:#fffaf0f5;backdrop-filter:blur(10px);border-bottom:1px solid #eadfca}
+nav{max-width:1100px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:9px;color:var(--g);font-weight:950;font-size:1.18rem}
+.logo-mark{width:40px;height:40px;border-radius:12px;background:var(--g);display:grid;place-items:center;color:white}
+.navlinks{display:flex;align-items:center;gap:20px;font-weight:800}
+.navlinks a:hover{color:var(--r)}
+.menu{display:none;border:0;background:none;font-size:27px}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 18px;border-radius:12px;font-weight:900;border:2px solid transparent;cursor:pointer}
+.btn-white{background:#fff;color:var(--g)}
+.btn-outline{border-color:#ffffff55;color:#fff}
+.hero{background:linear-gradient(135deg,var(--g2),var(--g));color:#fff}
+.hero-inner{max-width:1100px;margin:auto;padding:75px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.badge{display:inline-block;border:1px solid #ffffff45;background:#ffffff12;padding:7px 13px;border-radius:99px;font-size:.8rem;font-weight:900;margin-bottom:16px}
+h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1;letter-spacing:-2px;margin-bottom:20px}
+.hero p{font-size:1.08rem;color:#e5f1e8;max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-card{background:#ffffff12;border:1px solid #ffffff30;border-radius:25px;padding:25px}
+.hero-card h3{font-size:1.3rem}
+.produce{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:15px}
+.item{background:#fff;color:var(--ink);padding:14px;border-radius:15px;text-align:center;font-weight:850}
+.item span{display:block;font-size:2rem}
+section{max-width:1100px;margin:auto;padding:70px 20px}
+.eyebrow{font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--r);font-weight:950}
+h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:7px 0 10px}
+.muted{color:var(--muted)}
+.head{max-width:700px;margin-bottom:30px}
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.product{background:#fff;border:1px solid #eee3d2;border-radius:20px;padding:20px 15px;box-shadow:0 8px 25px #3926100c}
+.emoji{font-size:3rem}
+.product h3{margin-top:7px}
+.product p{font-size:.86rem;color:var(--muted)}
+.price{color:var(--g);font-weight:950;margin-top:9px}
+
+.price-manager{margin-top:28px;background:#fff;border:1px solid #eadfca;border-radius:22px;padding:22px;box-shadow:0 8px 25px #3926100c}
+.price-manager h3{margin-bottom:5px}
+.price-controls{display:grid;gap:10px;margin-top:17px}
+.price-row{display:grid;grid-template-columns:1fr auto auto auto;gap:9px;align-items:center;padding:11px;background:#fffaf0;border-radius:13px}
+.price-display{min-width:110px;text-align:center;color:var(--g);font-weight:950}
+.price-btn{border:1px solid #d9d0c0;background:#fff;border-radius:10px;padding:9px 12px;font-weight:950;cursor:pointer}
+.price-btn:hover{background:#f0f7ec}
+.price-note{font-size:.82rem;color:var(--muted);margin-top:12px}
+@media(max-width:560px){.price-row{grid-template-columns:1fr auto auto}.price-display{grid-column:1/-1;text-align:left}}
+
+.order-section{background:#f0f7ec}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid #dfe9d7;border-radius:20px;padding:23px}
+.icon{font-size:2rem}
+.card h3{margin:7px 0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{background:#fff;border:1px solid #eadfca;border-radius:18px;padding:20px}
+.num{width:34px;height:34px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:950}
+.step h3{margin:10px 0 4px}
+.order{background:var(--g2);color:#fff;border-radius:28px;padding:42px}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+form{display:grid;gap:11px}
+input,select,textarea{width:100%;padding:13px;border-radius:11px;border:1px solid #d9d0c0;font:inherit}
+textarea{min-height:90px;resize:vertical}
+form .btn{border:0;background:#fff;color:var(--g);font-size:1rem}
+footer{background:#101812;color:#dce8df;padding:34px 20px}
+.footer{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:.85rem;color:#aebbb1}
+.float{position:fixed;right:17px;bottom:17px;background:#25d366;color:#fff;padding:13px 17px;border-radius:99px;font-weight:950;box-shadow:0 10px 30px #0003;z-index:30}
+@media(max-width:850px){
+ .hero-inner,.order-grid{grid-template-columns:1fr}
+ .products{grid-template-columns:repeat(2,1fr)}
+ .cards{grid-template-columns:1fr}
+ .steps{grid-template-columns:repeat(2,1fr)}
+ .menu{display:block}
+ .navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:var(--cream);padding:20px;flex-direction:column;border-bottom:1px solid #eadfca}
+ .navlinks.open{display:flex}
+}
+@media(max-width:480px){.steps{grid-template-columns:1fr}.hero-inner{padding-top:55px}.order{padding:28px 20px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="logo" href="#home"><span class="logo-mark">🌿</span>Mama Mboga</a>
+<button class="menu" onclick="toggleMenu()">☰</button>
+<div class="navlinks" id="navlinks">
+<a href="#products" onclick="closeMenu()">Products</a>
+<a href="#business" onclick="closeMenu()">Business Orders</a>
+<a href="#how" onclick="closeMenu()">How It Works</a>
+<a href="#order" class="btn btn-white" onclick="closeMenu()">Order Now</a>
+</div>
+</nav>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="hero-inner">
+<div>
+<span class="badge">FRESH • AFFORDABLE • MACHakos</span>
+<h1>Fresh vegetables for every kitchen.</h1>
+<p>Buy fresh tomatoes, onions, chillies, pilipili hoho and coriander from Mama Mboga at Machakos Main Market. Order easily through WhatsApp.</p>
+<div class="actions">
+<a class="btn btn-white" href="#order">🛒 Place an Order</a>
+<a class="btn btn-outline" href="#products">See Today's Prices</a>
+</div>
+</div>
+<div class="hero-card">
+<h3>🌱 Mama Mboga Fresh Picks</h3>
+<div class="produce">
+<div class="item"><span>🍅</span>Tomatoes<br><span id="hero-tomatoes">KSh 100/kg</span></div>
+<div class="item"><span>🧅</span>Onions<br><span id="hero-onions">KSh 80/kg</span></div>
+<div class="item"><span>🌶️</span>Chillies<br><span id="hero-chillies">KSh 120/kg</span></div>
+<div class="item"><span>🫑</span>Pilipili hoho<br><span id="hero-hoho">KSh 80/kg</span></div>
+</div>
+<p style="margin-top:14px;font-size:.9rem">🌿 Coriander: KSh 10 per tied bundle.</p>
+</div>
+</div>
+</section>
+
+<section id="products">
+<div class="head"><div class="eyebrow">Our products</div><h2>Fresh produce at clear prices.</h2><p class="muted">Simple pricing helps customers decide quickly and makes ordering easier.</p></div>
+<div class="products">
+<div class="product"><div class="emoji">🍅</div><h3>Tomatoes</h3><p>Fresh and carefully selected.</p><div class="price">KSh 100 / kg</div></div>
+<div class="product"><div class="emoji">🧅</div><h3>Onions</h3><p>Quality everyday onions.</p><div class="price">KSh 80 / kg</div></div>
+<div class="product"><div class="emoji">🌶️</div><h3>Chillies</h3><p>Fresh chilli peppers.</p><div class="price">KSh 120 / kg</div></div>
+<div class="product"><div class="emoji">🫑</div><h3>Pilipili hoho</h3><p>Crisp, colourful peppers.</p><div class="price">KSh 80 / kg</div></div>
+<div class="product"><div class="emoji">🌿</div><h3>Coriander</h3><p>Fresh, tied together.</p><div class="price">KSh 10 / bundle</div></div>
+</div>
+
+<div class="price-manager">
+  <div class="eyebrow">Price Manager</div>
+  <h3>Adjust each product price</h3>
+  <p class="muted">Use the buttons to change each price by KSh 5. Coriander stays fixed at KSh 10 per bundle.</p>
+  <div class="price-controls">
+    <div class="price-row">
+      <strong>🍅 Tomatoes</strong>
+      <span class="price-display" id="pm-tomatoes">KSh 100 / kg</span>
+      <button class="price-btn" onclick="changePrice('tomatoes',-5)">− KSh 5</button>
+      <button class="price-btn" onclick="changePrice('tomatoes',5)">+ KSh 5</button>
+    </div>
+    <div class="price-row">
+      <strong>🧅 Onions</strong>
+      <span class="price-display" id="pm-onions">KSh 80 / kg</span>
+      <button class="price-btn" onclick="changePrice('onions',-5)">− KSh 5</button>
+      <button class="price-btn" onclick="changePrice('onions',5)">+ KSh 5</button>
+    </div>
+    <div class="price-row">
+      <strong>🌶️ Chillies</strong>
+      <span class="price-display" id="pm-chillies">KSh 120 / kg</span>
+      <button class="price-btn" onclick="changePrice('chillies',-5)">− KSh 5</button>
+      <button class="price-btn" onclick="changePrice('chillies',5)">+ KSh 5</button>
+    </div>
+    <div class="price-row">
+      <strong>🫑 Pilipili hoho</strong>
+      <span class="price-display" id="pm-hoho">KSh 80 / kg</span>
+      <button class="price-btn" onclick="changePrice('hoho',-5)">− KSh 5</button>
+      <button class="price-btn" onclick="changePrice('hoho',5)">+ KSh 5</button>
+    </div>
+    <div class="price-row">
+      <strong>🌿 Coriander</strong>
+      <span class="price-display">KSh 10 / bundle</span>
+      <span></span><span></span>
+    </div>
+  </div>
+  <p class="price-note">Prices are saved on this device and are also used in the order selector.</p>
+</div>
+</section>
+
+<section class="order-section" id="business">
+<div class="head"><div class="eyebrow">Business growth</div><h2>More than a vegetable stall.</h2><p class="muted">Use Mama Mboga to build repeat customers and attract larger buyers.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">🏠</div><h3>Households</h3><p>Make everyday vegetable shopping quick and convenient.</p></div>
+<div class="card"><div class="icon">🍽️</div><h3>Restaurants & food vendors</h3><p>Encourage regular weekly and bulk orders with easy WhatsApp communication.</p></div>
+<div class="card"><div class="icon">🛍️</div><h3>Shops & resellers</h3><p>Invite customers who need larger quantities to contact you directly.</p></div>
+</div>
+</section>
+
+<section id="how">
+<div class="head"><div class="eyebrow">Easy ordering</div><h2>From website to sale in minutes.</h2></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><h3>Choose</h3><p class="muted">Select your vegetables and quantity.</p></div>
+<div class="step"><div class="num">2</div><h3>Send</h3><p class="muted">Submit the order through WhatsApp.</p></div>
+<div class="step"><div class="num">3</div><h3>Confirm</h3><p class="muted">Mama Mboga confirms availability and delivery/pick-up.</p></div>
+<div class="step"><div class="num">4</div><h3>Repeat</h3><p class="muted">Happy customers become regular customers.</p></div>
+</div>
+</section>
+
+<section id="order">
+<div class="order">
+<div class="order-grid">
+<div>
+<div class="eyebrow" style="color:#bce77d">Place your order</div>
+<h2>Order fresh vegetables today.</h2>
+<p style="color:#dcebdd">Fill in your details and the website will create a WhatsApp order message.</p>
+<p style="margin-top:16px">📍 <strong>Machakos Main Market</strong><br>📱 <strong>0717 251 096</strong></p>
+</div>
+<form id="orderForm">
+<input id="customer" required placeholder="Your name">
+<input id="phone" required placeholder="Your phone number">
+<select id="product" required>
+<option value="">Choose a product</option>
+<option>Tomatoes - KSh 100/kg</option>
+<option>Onions - KSh 80/kg</option>
+<option>Chillies - KSh 120/kg</option>
+<option>Pilipili hoho - KSh 80/kg</option>
+<option>Coriander - KSh 10/bundle</option>
+<option>Mixed vegetables</option>
+</select>
+<input id="quantity" required placeholder="Quantity (e.g. 2 kg, 5 kg, 3 bundles)">
+<textarea id="notes" placeholder="Delivery/pick-up details or extra request"></textarea>
+<button class="btn" type="submit">💬 Send Order on WhatsApp</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer">
+<div><strong>Mama Mboga</strong><p class="small">Fresh produce. Fair prices. Better service.</p></div>
+<div class="small">© <span id="year"></span> Mama Mboga • Machakos Main Market</div>
+</div>
+</footer>
+
+<a class="float" id="wa" href="#">💬 WhatsApp</a>
+
+<script>
+const BUSINESS={name:"Mama Mboga",whatsapp:"254717251096",location:"Machakos Main Market"};
+const defaultPrices={tomatoes:100,onions:80,chillies:120,hoho:80};
+let prices=JSON.parse(localStorage.getItem("mamaMbogaPrices")||"null")||{...defaultPrices};
+
+function renderPrices(){
+  Object.keys(defaultPrices).forEach(key=>{
+    const el=document.getElementById("pm-"+key);
+    if(el) el.textContent="KSh "+prices[key]+" / kg";
+  });
+  const select=document.getElementById("product");
+  if(select){
+    select.innerHTML=`
+      <option value="">Choose a product</option>
+      <option>Tomatoes - KSh ${prices.tomatoes}/kg</option>
+      <option>Onions - KSh ${prices.onions}/kg</option>
+      <option>Chillies - KSh ${prices.chillies}/kg</option>
+      <option>Pilipili hoho - KSh ${prices.hoho}/kg</option>
+      <option>Coriander - KSh 10/bundle</option>
+      <option>Mixed vegetables</option>`;
+  }
+}
+function changePrice(product,amount){
+  prices[product]=Math.max(0,prices[product]+amount);
+  localStorage.setItem("mamaMbogaPrices",JSON.stringify(prices));
+  renderPrices();
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+function updateVisiblePrices(){
+  const heroMap={tomatoes:"hero-tomatoes",onions:"hero-onions",chillies:"hero-chillies",hoho:"hero-hoho"};
+  Object.keys(heroMap).forEach(k=>{
+    const el=document.getElementById(heroMap[k]);
+    if(el) el.textContent="KSh "+prices[k]+"/kg";
+  });
+  const productPrices=document.querySelectorAll("#products .product .price");
+  const keys=["tomatoes","onions","chillies","hoho"];
+  keys.forEach((k,i)=>{if(productPrices[i]) productPrices[i].textContent="KSh "+prices[k]+" / kg";});
+}
+const originalRenderPrices=renderPrices;
+renderPrices=function(){originalRenderPrices();updateVisiblePrices();};
+renderPrices();
+
+const greeting=encodeURIComponent("Hello Mama Mboga, I would like to order fresh vegetables. Please confirm availability.");
+document.getElementById("wa").href="https://wa.me/"+BUSINESS.whatsapp+"?text="+greeting;
+function toggleMenu(){document.getElementById("navlinks").classList.toggle("open")}
+function closeMenu(){document.getElementById("navlinks").classList.remove("open")}
+document.getElementById("orderForm").addEventListener("submit",function(e){
+e.preventDefault();
+const name=document.getElementById("customer").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const product=document.getElementById("product").value;
+const quantity=document.getElementById("quantity").value.trim();
+const notes=document.getElementById("notes").value.trim();
+const msg=`Hello Mama Mboga, I would like to place an order.
+
+Name: ${name}
+My phone: ${phone}
+Product: ${product}
+Quantity: ${quantity}
+${notes?"Extra details: "+notes:""}
+
+Please confirm availability and the order total. Thank you.`;
+window.open("https://wa.me/"+BUSINESS.whatsapp+"?text="+encodeURIComponent(msg),"_blank");
+});
+</script>
+</body>
+</html>
